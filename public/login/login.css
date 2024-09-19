@@ -1,0 +1,75 @@
+/* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the body background color and font properties */
+body {
+    background-color: #3a3d42;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for the login form */
+.login-container {
+    background-color: #242d38; /* Dark grey/blue background for form container */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Set the max width */
+}
+
+/* Form title */
+h1 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 24px;
+}
+
+/* Style for input fields */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #374151;
+    border-radius: 8px;
+    background-color: #374151; /* Dark input background */
+    color: #e5e7eb; /* Light text color */
+    font-size: 16px;
+}
+
+/* Remove the default outline and add focus state */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #818cf8; /* Light purple border on focus */
+    background-color: #111827; /* Darker background on focus */
+    color: #ffffff;
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #6e67f1; /* Purple color */
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+button[type="submit"]:hover {
+    background-color: #4338ca; /* Darker purple on hover */
+}
+
