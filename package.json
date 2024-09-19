@@ -1,0 +1,19 @@
+{
+  "name": "chat-app",
+  "version": "1.0.0",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sinmisola Ajao",
+  "license": "MIT",
+  "description": "Real time chat app with rooms",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.1",
+    "mongoose": "^8.6.1",
+    "socket.io": "^4.7.5"
+  }
+}
