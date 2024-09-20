@@ -1,5 +1,5 @@
 
-const socket = io('http://localhost:3000');
+const socket = io('https://linkup-chat-app.onrender.com');
 const rooms = document.getElementById('rooms');
 const messagesDiv = document.getElementById('message')
 const sendMessagebtn = document.getElementById('sendMessagebtn');
