@@ -19,7 +19,7 @@ default_rooms.forEach((room) => {
             messagesDiv.textContent = '';
         }
         selected_room = room;
-        socket.emit('joinRoom', room);
+        socket.emit('joinRoom', {roomName: room, username});
         load_messages(room);
     }
     rooms.appendChild(li);
@@ -38,10 +38,10 @@ function load_messages(roomName) {
     }).catch(err => console.log(`Error loading message: ${err}`));
 }
 
-socket.on('userJoined', (room) => {
+socket.on('userJoined', ({roomName, newUser}) => {
     // Show a message that a user has joined without reloading messages for everyone
     const joinMessage = document.createElement('div');
-    joinMessage.textContent = `User ${username} has joined the room: ${room}`;
+    joinMessage.textContent = `User ${newUser} has joined the room: ${roomName}`;
     messagesDiv.appendChild(joinMessage);
 });
 

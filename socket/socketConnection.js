@@ -1,15 +1,16 @@
 const { disconnect } = require("mongoose");
 const Message = require("../models/message_model");
 
+
 module.exports = (io) => {
     io.on('connection', (socket) => {
         console.log('User connected');
 
-        socket.on('joinRoom', (roomName) => {
+        socket.on('joinRoom', ({ roomName, username }) => {
             socket.join(roomName);
             console.log('User joined');
 
-            socket.broadcast.to(roomName).emit('userJoined', roomName);
+            socket.broadcast.to(roomName).emit('userJoined', {roomName, newUser: username});
         });
 
         socket.on('sendMessage', async (data) => {
