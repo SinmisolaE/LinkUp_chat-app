@@ -38,10 +38,10 @@ function load_messages(roomName) {
     }).catch(err => console.log(`Error loading message: ${err}`));
 }
 
-socket.on('userJoined', (room, userId) => {
+socket.on('userJoined', (room) => {
     // Show a message that a user has joined without reloading messages for everyone
     const joinMessage = document.createElement('div');
-    joinMessage.textContent = `User ${userId} has joined the room: ${room}`;
+    joinMessage.textContent = `User ${username} has joined the room: ${room}`;
     messagesDiv.appendChild(joinMessage);
 });
 
