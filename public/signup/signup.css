@@ -33,6 +33,10 @@ h1 {
     margin-bottom: 24px;
 }
 
+#err_msg {
+    color: white;
+}
+
 /* Style for input fields */
 input[type="email"], input[type="text"], input[type="password"] {
     width: 100%;
