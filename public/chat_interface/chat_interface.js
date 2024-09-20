@@ -26,7 +26,7 @@ default_rooms.forEach((room) => {
 });
 
 function load_messages(roomName) {
-    fetch(`http://localhost:3000/chat/rooms/${roomName}/messages`)
+    fetch(`https://linkup-chat-app.onrender.com/chat/rooms/${roomName}/messages`)
     .then(response => response.json())
     .then(data => {
         data.forEach((msg) => {

@@ -7,7 +7,7 @@ document.getElementById('SignUp').addEventListener('submit', async function(even
 
     console.log(username);
 
-    const response = await fetch('http://localhost:3000/auth/signup', {
+    const response = await fetch('https://linkup-chat-app.onrender.com/auth/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
