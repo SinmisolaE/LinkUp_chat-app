@@ -9,7 +9,7 @@ module.exports = (io) => {
             socket.join(roomName);
             console.log('User joined');
 
-            socket.broadcast.to(roomName).emit('message', `User ${socket.id} has joined the room: ${roomName}`);
+            socket.broadcast.to(roomName).emit('userJoined', `User ${socket.id} has joined the room: ${roomName}`);
         });
 
         socket.on('sendMessage', async (data) => {

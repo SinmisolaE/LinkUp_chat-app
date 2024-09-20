@@ -29,6 +29,7 @@ function load_messages(roomName) {
     fetch(`https://linkup-chat-app.onrender.com/chat/rooms/${roomName}/messages`)
     .then(response => response.json())
     .then(data => {
+        messagesDiv.textContent = '';
         data.forEach((msg) => {
             const messageDiv = document.createElement('div');
             messageDiv.textContent = `${msg.sender}: ${msg.message}`;
@@ -36,6 +37,13 @@ function load_messages(roomName) {
         });
     }).catch(err => console.log(`Error loading message: ${err}`));
 }
+
+socket.on('userJoined', (room, userId) => {
+    // Show a message that a user has joined without reloading messages for everyone
+    const joinMessage = document.createElement('div');
+    joinMessage.textContent = `User ${userId} has joined the room: ${room}`;
+    messagesDiv.appendChild(joinMessage);
+});
 
 
 socket.on('newMessage', (data) => {
