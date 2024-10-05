@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 const io = Socketio(server);
 
-const mongoUrl = 'mongodb+srv://Sinmisola:Sinmi123@cluster0.orsws.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoUrl = process.env.MONGO_URL;
 
 mongoose.connect(mongoUrl, {
     useNewUrlParser: true,
